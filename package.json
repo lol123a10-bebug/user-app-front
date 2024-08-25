@@ -3,25 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mantine/core": "^6.0.22",
+    "@mantine/dates": "^6.0.22",
+    "@mantine/form": "^6.0.22",
+    "@mantine/hooks": "^6.0.22",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "compose-function": "^3.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
+    "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "zod": "^3.23.8"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   },
   "browserslist": {
     "production": [
@@ -34,5 +36,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "@craco/types": "^7.1.0",
+    "@eslint/js": "^9.8.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
+    "@types/compose-function": "^0.0.33",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-no-relative-import-paths": "^1.5.5",
+    "prettier": "^3.3.3",
+    "typescript-eslint": "^8.0.1"
+  },
+  "cracoConfig": "craco.config.js"
 }
