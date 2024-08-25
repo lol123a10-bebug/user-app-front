@@ -8,19 +8,17 @@ interface Props extends BoxProps {
   title: string;
 }
 
-const _BasePage = forwardRef<HTMLDivElement, Props>(
-  ({ children, title = "", meta, ...other }, ref) => (
-    <>
-      <Helmet>
-        <title>{`${title} | My User`}</title>
-        {meta}
-      </Helmet>
+const _BasePage = forwardRef<HTMLDivElement, Props>(({ children, title = "", meta, ...other }, ref) => (
+  <>
+    <Helmet>
+      <title>{`${title} | My User`}</title>
+      {meta}
+    </Helmet>
 
-      <Box ref={ref} {...other}>
-        {children}
-      </Box>
-    </>
-  ),
-);
+    <Box ref={ref} {...other}>
+      {children}
+    </Box>
+  </>
+));
 
 export const BasePage = createPolymorphicComponent<"div", Props>(_BasePage);

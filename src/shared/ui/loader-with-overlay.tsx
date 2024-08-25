@@ -6,9 +6,7 @@ interface Props {
 }
 
 const _LoaderWithOverlay = forwardRef<HTMLDivElement, Props>(({ visible = true }, ref) => {
-  return (
-    <LoadingOverlay ref={ref} visible={visible} transitionDuration={300} overlayOpacity={0.35} />
-  );
+  return <LoadingOverlay ref={ref} visible={visible} transitionDuration={300} overlayOpacity={0.35} />;
 });
 
 export const LoaderWithOverlay = _LoaderWithOverlay;

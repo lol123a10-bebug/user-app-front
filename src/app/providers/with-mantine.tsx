@@ -15,21 +15,28 @@ export const withMantine = (component: ComponentType) => () => {
   useCssVariables(colorScheme);
 
   return (
-  <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-    <MantineProvider theme={{ colorScheme, globalStyles: (theme) => ({
-       ":root": {
-        "--border-color-dark": "#1B2025",
-        "--border-color-light": "#E9ECEF",
-        "--border-color": "var(--border-color-light)",
-      },
+    <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+      <MantineProvider
+        theme={{
+          colorScheme,
+          globalStyles: (theme) => ({
+            ":root": {
+              "--border-color-dark": "#1B2025",
+              "--border-color-light": "#E9ECEF",
+              "--border-color": "var(--border-color-light)"
+            },
 
-      "html, body, #root": {
-        height: "100%",
-        backgroundColor: colorScheme === "light" ? theme.white : theme.black,
-      },
-    }) }}  withGlobalStyles withNormalizeCSS>
-       {createElement(component)}
-    </MantineProvider>
-  </ColorSchemeProvider>
-  )
+            "html, body, #root": {
+              height: "100%",
+              backgroundColor: colorScheme === "light" ? theme.white : theme.black
+            }
+          })
+        }}
+        withGlobalStyles
+        withNormalizeCSS
+      >
+        {createElement(component)}
+      </MantineProvider>
+    </ColorSchemeProvider>
+  );
 };

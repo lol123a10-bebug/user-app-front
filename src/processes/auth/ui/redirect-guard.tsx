@@ -10,8 +10,6 @@ type Props = {
 export const RedirectGuard = ({ children }: Props) => {
   const { user } = useAuth();
 
-  console.log(user)
-
   const { pathname } = useLocation();
 
   const [requestedLocation, setRequestedLocation] = useState<string | null>(null);
@@ -20,7 +18,7 @@ export const RedirectGuard = ({ children }: Props) => {
     if (pathname !== requestedLocation) {
       setRequestedLocation(pathname);
     }
-    
+
     return <LoginPage />;
   }
 

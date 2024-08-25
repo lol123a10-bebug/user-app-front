@@ -17,15 +17,15 @@ const _BaseLogo = forwardRef<HTMLDivElement, Props>((props, ref) => {
           display: "grid",
           gridTemplateColumns: "1.25rem 1fr",
           whiteSpace: "nowrap",
-          gap: "1rem",
+          gap: "1rem"
         },
-        ...getSxArray(sx),
+        ...getSxArray(sx)
       ]}
       {...boxProps}
     >
       <Box
         sx={{
-          display: "flex",
+          display: "flex"
         }}
       >
         <Image src={LogoIcon} />
@@ -38,7 +38,7 @@ const _BaseLogo = forwardRef<HTMLDivElement, Props>((props, ref) => {
           letterSpacing: ".5px",
           width: disableLabel ? "0%" : "100%",
           overflow: "hidden",
-          transition: "width .35s ease-in-out",
+          transition: "width .35s ease-in-out"
         })}
       >
         My User

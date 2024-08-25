@@ -7,18 +7,18 @@ import { BasePage } from "shared/ui";
 export const LoginPage = () => {
   const navigate = useNavigate();
 
-  const { login } = useAuth()
+  const { login } = useAuth();
 
   return (
     <AuthLayout>
       <BasePage title="Login">
-          <LoginForm
-            onSubmit={async (values) => {
-                login(values);
-                navigate(paths.dashboard.index);
-            }}
-          />
-        </BasePage>
+        <LoginForm
+          onSubmit={async (values) => {
+            login(values);
+            navigate(paths.dashboard.index);
+          }}
+        />
+      </BasePage>
     </AuthLayout>
   );
 };

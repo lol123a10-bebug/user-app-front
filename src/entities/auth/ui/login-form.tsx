@@ -6,12 +6,12 @@ import { AuthLogin } from "shared/lib";
 
 const schema = z.object({
   login: z.string().min(2, "Введите корректный логин"),
-  password: z.string().trim().min(5, "Пароль должен содержать не менее 5 символов"),
+  password: z.string().trim().min(5, "Пароль должен содержать не менее 5 символов")
 });
 
 const defaultValues = {
   login: "",
-  password: "",
+  password: ""
 };
 
 interface Props {
@@ -28,7 +28,7 @@ const _LoginForm = (props: Props) => {
     initialValues: initialState,
 
     validate: zodResolver(schema),
-    transformValues: (values) => ({ ...values, password: values.password.trim() }),
+    transformValues: (values) => ({ ...values, password: values.password.trim() })
   });
 
   const handleSubmit = async (values: AuthLogin) => {
@@ -41,22 +41,11 @@ const _LoginForm = (props: Props) => {
   };
 
   return (
-    <Box
-      component="form"
-      sx={{ display: "grid", gap: "1rem" }}
-      onSubmit={form.onSubmit(handleSubmit)}
-    >
+    <Box component="form" sx={{ display: "grid", gap: "1rem" }} onSubmit={form.onSubmit(handleSubmit)}>
       <TextInput label="Логин" {...form.getInputProps("login")} />
       <PasswordInput label="Пароль" {...form.getInputProps("password")} />
       <Box pt=".75rem" sx={{ display: "flex", justifyContent: "center" }}>
-        <Button
-          type="submit"
-          size="md"
-          px="3rem"
-          radius="md"
-          sx={{ fontSize: ".9rem" }}
-          loading={loading}
-        >
+        <Button type="submit" size="md" px="3rem" radius="md" sx={{ fontSize: ".9rem" }} loading={loading}>
           Продолжить
         </Button>
       </Box>
