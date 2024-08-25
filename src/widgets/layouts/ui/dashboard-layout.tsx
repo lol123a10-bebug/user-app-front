@@ -9,8 +9,7 @@ export const DashboardLayout = () => {
         sx={() => ({
           width: "100%",
           height: "100%",
-          display: "grid",
-          gridTemplateRows: "auto 1fr"
+          display: "grid"
         })}
       >
         <Outlet />
